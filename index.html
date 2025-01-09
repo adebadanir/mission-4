@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>To Do List</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="todo-app">
+        <h1>To-Do-List Application <img src="public/to-do-list.png" /></h1>
+        <section class="header">
+          <div class="profile">
+            <p class="body-medium">
+              <strong>Name</strong>: Ade Ba'dani Ramdhan
+            </p>
+            <p class="body-medium"><strong>Position</strong>: Developer</p>
+          </div>
+          <div id="current-time"></div>
+        </section>
+        <section id="task-input">
+          <textarea
+            name=""
+            id="input-box"
+            placeholder="Enter your task here"
+          ></textarea>
+          <div class="option-container">
+            <div>
+              <label for="priority"><strong> Select Priority</strong>:</label>
+              <select id="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </div>
+            <button onclick="addTask()">Add Task</button>
+            <button onclick="deleteAllTasks()">Delete All Tasks</button>
+          </div>
+          <div class="overdue-simulation" id="option-container">
+            <p>Overdue Simulation? Select and reload page</p>
+            <select id="overdue-simulation">
+              <option value="no" selected>No</option>
+              <option value="yes">yes</option>
+            </select>
+          </div>
+        </section>
+        <section id="todo-list">
+          <h2>To Do:</h2>
+          <ul id="tasks-list-container"></ul>
+        </section>
+
+        <section id="done-list">
+          <h2>Done:</h2>
+          <ul id="done-list-container"></ul>
+        </section>
+        <section id="overdue-list">
+          <h2>Overdue:</h2>
+          <ul id="overdue-list-container"></ul>
+        </section>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
