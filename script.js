@@ -29,7 +29,7 @@ function createCheckBox() {
 
 function createTaskText(task) {
   const taskText = document.createElement("span");
-  taskText.textContent = `${task}`;
+  taskText.innerHTML = `&nbsp; -&nbsp; ${task}`;
   taskText.classList.add("task-text");
   return taskText;
 }
@@ -43,7 +43,7 @@ function createPriorityText(priority) {
 function createTimeText(timeNow) {
   const timeText = document.createElement("span");
   timeText.id = "time-text";
-  timeText.innerHTML = `&nbsp; -&nbsp; ${timeNow}`;
+  timeText.innerHTML = `&nbsp${timeNow}`;
   return timeText;
 }
 
@@ -81,9 +81,9 @@ function addTask() {
   let timeText = createTimeText(timeNow);
 
   li.appendChild(checkBox);
-  li.appendChild(taskText);
-  li.appendChild(priorityText);
   li.appendChild(timeText);
+  li.appendChild(priorityText);
+  li.appendChild(taskText);
   li.classList.add("task-item");
   listContainer.appendChild(li);
   checkBox.addEventListener("change", function () {
@@ -156,11 +156,7 @@ function loadData() {
 
       let increment = 0;
       if (overdueSimulationCheck.value === "yes") {
-        const optionContainer = document.getElementById("option-container");
         increment = 1;
-        let p = document.createElement("p");
-        p.textContent = "Date now is simulated to day + 1";
-        optionContainer.appendChild(p);
       }
 
       const taskDate = `${year}/${month}/${Number(day) + increment}`;

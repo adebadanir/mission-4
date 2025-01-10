@@ -17,32 +17,38 @@
             </p>
             <p class="body-medium"><strong>Position</strong>: Developer</p>
           </div>
-          <div id="current-time"></div>
+          <div id="current-time" class="body-medium"></div>
         </section>
-        <section id="task-input">
+        <section class="task-input">
           <textarea
             name=""
             id="input-box"
             placeholder="Enter your task here"
           ></textarea>
           <div class="option-container">
-            <div>
-              <label for="priority"><strong> Select Priority</strong>:</label>
+            <label for="priority" style="font-size: 1.15rem"
+              ><strong> Select Priority</strong>:</label
+            >
+            <div class="custom-select">
               <select id="priority">
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
               </select>
             </div>
-            <button onclick="addTask()">Add Task</button>
-            <button onclick="deleteAllTasks()">Delete All Tasks</button>
+            <button onclick="addTask()" class="primary-button">Add Task</button>
+            <button onclick="deleteAllTasks()" class="secondary-button">
+              Delete All Tasks
+            </button>
           </div>
           <div class="overdue-simulation" id="option-container">
             <p>Overdue Simulation? Select and reload page</p>
-            <select id="overdue-simulation">
-              <option value="no" selected>No</option>
-              <option value="yes">yes</option>
-            </select>
+            <div class="custom-select">
+              <select id="overdue-simulation">
+                <option value="no" selected>No</option>
+                <option value="yes">Yes</option>
+              </select>
+            </div>
           </div>
         </section>
         <section id="todo-list">
